@@ -47,13 +47,14 @@ Os dados foram organizados segundo um fluxo simplificado de arquitetura Medallio
 | `existing_loans_count` | bigint | Quantidade de empréstimos atualmente ativos |
 | `employment_status` | string | Situação empregatícia do cliente |
 | `loan_approved` | bigint | Status de aprovação do empréstimo |
----
 
 ## 6. Análise de Resultados & Discussão
 1. Clientes com `credit_score` abaixo de 650 apresentam a maior risco de inadimplência.
-2. A concessão do empréstimo prioriza clientes em faixas de score médio e alto, mesmo a renda apresentando variações.
+2. Clientes com `credit_score` acima de 750 apresentam maior taxa de aprovação, indicando um grupo de maior segurança.
+3. Um nível elevado de renda não garante a aprovação do empréstimo, o score tem um peso maior.
 
----
 
 ## 7. Autoavaliação
-O objetivo principal de construir um pipeline funcional na nuvem foi atingido. A utilização do Databricks facilitou a integração do processamento distribuído com PySpark/SQL sem necessidade de infraestrutura local complexa. Como melhoria futura, pretende-se implementar rotinas automáticas de alerta de qualidade e salvar os dados em tabelas Delta no Unity Catalog.
+O objetivo de construir um pipeline funcional para analisar a concessão de empréstimos bancários e identificar os fatores determinantes do risco de inadimplência foi concluído de forma satisfatória.
+A utilização do Databricks facilitou a integração do processamento distribuído com PySpark/SQL sem necessidade de infraestrutura local complexa. 
+Como melhoria futura, pode ser implementadas rotinas automáticas para adição de dados de forma contínua para aprimoramento do pipeline e melhor acurácia nos resultados.
